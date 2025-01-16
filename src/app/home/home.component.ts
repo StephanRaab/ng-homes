@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { HousingLocationComponent } from "../housing-location/housing-location.component";
 
 @Component({
   selector: "app-home",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HousingLocationComponent],
   template: `
     <section>
       <form action="submit">
@@ -12,7 +13,9 @@ import { CommonModule } from "@angular/common";
         <input class="primary" type="submit" value="search" />
       </form>
     </section>
-    <section class="results"></section>
+    <section class="results">
+      <app-housing-location />
+    </section>
   `,
   styleUrls: ["./home.component.css"],
 })
